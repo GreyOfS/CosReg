@@ -1,0 +1,20 @@
+.loadingModal {
+    z-index: 999;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+
+    &:not(&-fullscreen) {
+        top: 50%;
+        left: 50%;
+        width: clamp(50px, 75vw, 800px);
+        height: clamp(50px, 75vh, 800px);
+        transform: translate(-50%, -50%);
+    }
+
+    &-fullscreen {
+        width: 100%;
+        height: 100vh;
+    }
+}
