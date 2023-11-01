@@ -1,9 +1,14 @@
-const express = require("express");
+require("dotenv").config()
+
+const express   = require("express");
+const morgan    = require("morgan");
+
+const router = require("./router");
 
 const server = express();
 
-server.listen(8000);
+server.use(morgan("dev"));
 
-server.use('/', (req, rep) => {
-    rep.end('Ping sur l\'adresse server')
-})
+server.use("/", router);
+
+server.listen(8000);
